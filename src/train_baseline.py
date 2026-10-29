@@ -11,6 +11,10 @@ from evaluate import date_bootstrap
 SEED = 42
 TOL = 0.005   # rule fixed in advance: simplest setting within 0.005 of the best mean macro AUC
 FEATURES = ["close_to_ma", "macd_line_rel", "day_range_pct", "pct_change_1d", "RSI_14", "rel_volume"]
+import sys
+SENT = len(sys.argv) > 3 and sys.argv[3] == "sent"
+if SENT:
+    FEATURES = FEATURES + ["sentiment_score", "sentiment_article_count", "has_sentiment"]
 LABELS = {"downward": 0, "neutral": 1, "upward": 2}   # same coding as NSE
 
 in_path, out_path = sys.argv[1], sys.argv[2]
@@ -86,3 +90,11 @@ print("test rows:", len(test_df), "| test dates:", test_df["Date"].nunique(),
       "| neutral share (the floor):", round((y_arr == 1).mean(), 3))
 keep = ["accuracy", "balanced_acc", "auc_macro", "auc_direction", "auc_neutral_vs_moving", "acc_minus_floor"]
 print(results[results["metric"].isin(keep)].round(3).to_string(index=False))
+
+tag = "sent" if SENT else "tech"
+cols = {"Code": test_df["Code"], "Date": test_df["Date"], "y": test_df["y"]}
+for m in probs:
+    for k in range(probs[m].shape[1]):
+        cols[f"{m}_p{k}"] = probs[m][:, k]
+pd.DataFrame(cols).to_csv(f"outputs/test_probs_{tag}.csv", index=False)
+print("saved outputs/test_probs_" + tag + ".csv")

@@ -20,3 +20,10 @@ In order, 29 Oct 2026:
 - Final rule: date-only article counts for the first trading day strictly after its date; the ~0.3% with a real time use the 16:00 ET cutoff.
 - Limitation to report: sentiment reaches the model one trading day after publication.
 - No model with sentiment had been run when this was decided.
+
+## 29 Oct: ablation design (fixed before running)
+- A: technical only. B: technical + sentiment_score, sentiment_article_count, has_sentiment.
+- Table: us_features_basketA_sent.csv. Same grid, selection rule, seed and split for both.
+- Each model run once on test. No tuning after seeing test results.
+- Comparison: paired date-bootstrap of B minus A, 95% interval.
+- Known limitation: news thins out after 18 Dec 2023, so the last test days have has_sentiment=0.
