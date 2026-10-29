@@ -13,3 +13,10 @@ In order, 29 Oct 2026:
 - Verified: row counts equal, titles match on every row, 0 missing URLs.
 - URL file is git-ignored (news_raw in name). Scoring uses headlines only, so FinBERT does not depend on it. Scores join to URLs by row_id.
 - FinBERT run on GPU with half precision (autocast), batch 128. Scores may differ from full precision in the 3rd or 4th decimal place.
+
+## 29 Oct: news timing rule (amended before any sentiment result)
+- Found: 99.7% of FNSPID rows are date-only (00:00:00 UTC), so no time of day is known.
+- First rule (16:00 ET cutoff for all rows) would have put date-only news on its own date, which risks look-ahead (e.g. after-close earnings).
+- Final rule: date-only article counts for the first trading day strictly after its date; the ~0.3% with a real time use the 16:00 ET cutoff.
+- Limitation to report: sentiment reaches the model one trading day after publication.
+- No model with sentiment had been run when this was decided.
