@@ -53,3 +53,13 @@ In order, 29 Oct 2026:
 - Public dataset checked: Kaggle stock tweets, 2021-09-30 to 2022-09-30, about 81,000 tweets, about 20% duplicate text, Tesla 46% and TSM 14% of rows. No overlap with the 2023 test period, so it could only support a separate pilot.
 - Licence, timestamp precision and ticker list were not verified.
 - Decision: not pursued in this project. Reported as a limitation and as future work.
+
+## 29 Oct: event study (Task 19), decided before running
+- Events: ticker-days with at least 3 articles, split by the daily mean sentiment score into the top 10% ("good news") and bottom 10% ("bad news"). News dated on non-trading days is not used.
+- Abnormal return: the stock's daily return minus the basket's average return that day.
+- Windows: trading days -1, 0 (event day), +1, +2, +3. Only days +1 to +3 bear on predictability. Day 0 is the same-day reaction.
+- Second view: days where a ticker's article count is in its own top 10% (and at least 3): extra size of move (mean absolute abnormal return) on days 0, +1, +2 versus all other days.
+- Intervals: 1,000 resamples of whole dates, seed 42, 95% percentile intervals.
+- Descriptive only: no model, no tuning, no choosing among variants. All of it is reported, including anything that shows nothing.
+- About 1 in 20 intervals will exclude zero by chance. A single isolated hit is not read as a finding.
+- Event study result (29 Oct): 900 good-news and 900 bad-news events. Event-day abnormal return +0.38% (good) and -0.96% (bad); good minus bad +1.34 pp (1.12 to 1.55). Days +1 to +3: good minus bad +0.14, -0.17, +0.04, all intervals include zero. Day -1: good minus bad +0.43 (0.18 to 0.65), probably headlines reporting the prior day's move (interpretation, not tested). Article surges: extra absolute move +1.16 pp (event day), +0.59 (day +1), +0.20 (day +2), all intervals above zero; not a causal claim.
