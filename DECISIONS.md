@@ -27,3 +27,8 @@ In order, 29 Oct 2026:
 - Each model run once on test. No tuning after seeing test results.
 - Comparison: paired date-bootstrap of B minus A, 95% interval.
 - Known limitation: news thins out after 18 Dec 2023, so the last test days have has_sentiment=0.
+
+## 29 Oct: pre-registered sensitivity checks (decided before running)
+- S1: relabel with a ±1.5% neutral band, rerun A and B once each, same grid, rule, seed and split.
+- S2: drop test days with no news coverage (after 18 Dec 2023) and re-evaluate the saved probabilities.
+- Both are reported beside the primary ±1% result. Neither replaces it, and none is chosen for looking better.
