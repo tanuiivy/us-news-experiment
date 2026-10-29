@@ -1,0 +1,11 @@
+model,metric,A_tech,B_sent,B_minus_A,ci_low,ci_high,excludes_zero
+xgboost,accuracy,0.517,0.517,0.0,-0.0028,0.0028,False
+xgboost,balanced_acc,0.399,0.3956,-0.0034,-0.0076,0.0005,False
+xgboost,auc_macro,0.6159,0.616,0.0001,-0.0004,0.0006,False
+xgboost,auc_direction,0.4896,0.4904,0.0009,-0.0031,0.0043,False
+xgboost,auc_neutral_vs_moving,0.6447,0.6445,-0.0002,-0.0005,0.0002,False
+random_forest,accuracy,0.4918,0.483,-0.0089,-0.0149,-0.0032,True
+random_forest,balanced_acc,0.3983,0.3915,-0.0068,-0.0147,0.0017,False
+random_forest,auc_macro,0.6145,0.6155,0.001,-0.0014,0.0034,False
+random_forest,auc_direction,0.4825,0.4893,0.0068,-0.0041,0.0168,False
+random_forest,auc_neutral_vs_moving,0.6399,0.6404,0.0005,-0.002,0.0028,False

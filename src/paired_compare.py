@@ -1,12 +1,13 @@
-import sys
+import sys, os
+S = os.environ.get("RUN_SUFFIX", "")
 import numpy as np
 import pandas as pd
 sys.path.insert(0, "src")
 from evaluate import all_metrics
 
 until = sys.argv[1] if len(sys.argv) > 1 else None   # e.g. 2023-12-18 for sensitivity S2
-A = pd.read_csv("outputs/test_probs_tech.csv")
-B = pd.read_csv("outputs/test_probs_sent.csv")
+A = pd.read_csv(f"outputs/test_probs_tech{S}.csv")
+B = pd.read_csv(f"outputs/test_probs_sent{S}.csv")
 assert (A[["Code", "Date", "y"]].values == B[["Code", "Date", "y"]].values).all(), "rows differ"
 if until:
     keep = (A["Date"] <= until).to_numpy()
@@ -42,4 +43,4 @@ for m in ["xgboost", "random_forest"]:
                      "excludes_zero": bool(lo > 0 or hi < 0)})
 out = pd.DataFrame(rows)
 print(out.to_string(index=False))
-out.to_csv("outputs/us_paired_B_minus_A" + ("_until" if until else "") + ".csv", index=False)
+out.to_csv("outputs/us_paired_B_minus_A" + ("_until" if until else "") + S + ".csv", index=False)

@@ -91,7 +91,8 @@ print("test rows:", len(test_df), "| test dates:", test_df["Date"].nunique(),
 keep = ["accuracy", "balanced_acc", "auc_macro", "auc_direction", "auc_neutral_vs_moving", "acc_minus_floor"]
 print(results[results["metric"].isin(keep)].round(3).to_string(index=False))
 
-tag = "sent" if SENT else "tech"
+import os
+tag = ("sent" if SENT else "tech") + os.environ.get("RUN_SUFFIX", "")
 cols = {"Code": test_df["Code"], "Date": test_df["Date"], "y": test_df["y"]}
 for m in probs:
     for k in range(probs[m].shape[1]):
