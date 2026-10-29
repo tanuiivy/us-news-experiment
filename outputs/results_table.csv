@@ -1,0 +1,31 @@
+run,model,metric,technical_only,with_sentiment,difference,ci_low,ci_high,excludes_zero,always_neutral_accuracy
+Primary (+-1.0% band),XGBoost,accuracy,0.4532,0.4521,-0.0011,-0.0046,0.0021,False,0.518
+Primary (+-1.0% band),XGBoost,balanced_acc,0.3872,0.3859,-0.0013,-0.0059,0.0026,False,0.518
+Primary (+-1.0% band),XGBoost,auc_macro,0.5745,0.5743,-0.0002,-0.0007,0.0003,False,0.518
+Primary (+-1.0% band),XGBoost,auc_direction,0.4662,0.4656,-0.0006,-0.0037,0.0026,False,0.518
+Primary (+-1.0% band),XGBoost,auc_neutral_vs_moving,0.6082,0.6082,0.0,-0.0003,0.0003,False,0.518
+Primary (+-1.0% band),Random Forest,accuracy,0.4319,0.4323,0.0004,-0.0074,0.0092,False,0.518
+Primary (+-1.0% band),Random Forest,balanced_acc,0.3781,0.3815,0.0034,-0.0045,0.013,False,0.518
+Primary (+-1.0% band),Random Forest,auc_macro,0.5756,0.5766,0.001,-0.0008,0.0028,False,0.518
+Primary (+-1.0% band),Random Forest,auc_direction,0.4677,0.4652,-0.0025,-0.0095,0.0037,False,0.518
+Primary (+-1.0% band),Random Forest,auc_neutral_vs_moving,0.6048,0.6048,-0.0,-0.0023,0.002,False,0.518
+Late December removed (+-1.0%),XGBoost,accuracy,0.4464,0.4453,-0.0011,-0.0044,0.0022,False,
+Late December removed (+-1.0%),XGBoost,balanced_acc,0.3841,0.3829,-0.0013,-0.0054,0.0027,False,
+Late December removed (+-1.0%),XGBoost,auc_macro,0.5703,0.5701,-0.0002,-0.0008,0.0003,False,
+Late December removed (+-1.0%),XGBoost,auc_direction,0.4687,0.4682,-0.0005,-0.0038,0.0031,False,
+Late December removed (+-1.0%),XGBoost,auc_neutral_vs_moving,0.603,0.6031,0.0001,-0.0003,0.0004,False,
+Late December removed (+-1.0%),Random Forest,accuracy,0.4269,0.4276,0.0007,-0.007,0.0085,False,
+Late December removed (+-1.0%),Random Forest,balanced_acc,0.3769,0.3805,0.0037,-0.0048,0.0121,False,
+Late December removed (+-1.0%),Random Forest,auc_macro,0.5713,0.5722,0.0009,-0.001,0.0029,False,
+Late December removed (+-1.0%),Random Forest,auc_direction,0.4735,0.4709,-0.0026,-0.0095,0.0041,False,
+Late December removed (+-1.0%),Random Forest,auc_neutral_vs_moving,0.5995,0.5994,-0.0001,-0.0024,0.0021,False,
+Wider band (+-1.5%),XGBoost,accuracy,0.517,0.517,0.0,-0.0028,0.0028,False,0.677
+Wider band (+-1.5%),XGBoost,balanced_acc,0.399,0.3956,-0.0034,-0.0076,0.0005,False,0.677
+Wider band (+-1.5%),XGBoost,auc_macro,0.6159,0.616,0.0001,-0.0004,0.0006,False,0.677
+Wider band (+-1.5%),XGBoost,auc_direction,0.4896,0.4904,0.0009,-0.0031,0.0043,False,0.677
+Wider band (+-1.5%),XGBoost,auc_neutral_vs_moving,0.6447,0.6445,-0.0002,-0.0005,0.0002,False,0.677
+Wider band (+-1.5%),Random Forest,accuracy,0.4918,0.483,-0.0089,-0.0149,-0.0032,True,0.677
+Wider band (+-1.5%),Random Forest,balanced_acc,0.3983,0.3915,-0.0068,-0.0147,0.0017,False,0.677
+Wider band (+-1.5%),Random Forest,auc_macro,0.6145,0.6155,0.001,-0.0014,0.0034,False,0.677
+Wider band (+-1.5%),Random Forest,auc_direction,0.4825,0.4893,0.0068,-0.0041,0.0168,False,0.677
+Wider band (+-1.5%),Random Forest,auc_neutral_vs_moving,0.6399,0.6404,0.0005,-0.002,0.0028,False,0.677

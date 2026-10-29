@@ -32,3 +32,12 @@ In order, 29 Oct 2026:
 - S1: relabel with a ±1.5% neutral band, rerun A and B once each, same grid, rule, seed and split.
 - S2: drop test days with no news coverage (after 18 Dec 2023) and re-evaluate the saved probabilities.
 - Both are reported beside the primary ±1% result. Neither replaces it, and none is chosen for looking better.
+
+## 29 Oct: sensitivity S3, full-text sentiment (decided before extraction or scoring)
+- Reason: the NSE scored article text; this experiment scored headlines only. S3 tests whether that difference matters.
+- Text: "Article_title. Article" for the same 71,778 rows, FinBERT on the first 512 tokens. Article text is cut at 4,000 characters at extraction (enough for 512 tokens).
+- Rows with no usable article (under 200 characters) fall back to the headline score already computed. The share of fallbacks is reported.
+- Feasibility rule: if fewer than 50% of rows have usable article text, S3 is reported as not feasible and not run.
+- Everything else unchanged: timing rule, features, grid, selection rule, seed, split, +-1.0% band. Model A is unchanged and is reused.
+- Run B once on the new sentiment columns. Compare B(text) with A and with B(headline) using the paired bootstrap.
+- Report the result whatever it shows. No second attempt or alternative scoring after seeing it.
