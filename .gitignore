@@ -1,0 +1,19 @@
+# Raw downloads: licensing, size, and re-downloadable. Keep only the placeholder.
+data/raw/*
+!data/raw/.gitkeep
+
+# Anything that could hold article text, headlines or URLs (never committed)
+**/*article*
+**/*headline*
+**/news_raw*
+
+# Secrets such as news-API keys
+.env
+*.key
+
+# Python and notebook noise
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
