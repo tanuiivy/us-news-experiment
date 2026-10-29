@@ -41,3 +41,9 @@ In order, 29 Oct 2026:
 - Everything else unchanged: timing rule, features, grid, selection rule, seed, split, +-1.0% band. Model A is unchanged and is reused.
 - Run B once on the new sentiment columns. Compare B(text) with A and with B(headline) using the paired bootstrap.
 - Report the result whatever it shows. No second attempt or alternative scoring after seeing it.
+
+## 29 Oct: validity check V1 (decided before running)
+- Question: do FinBERT scores relate to the same-day return? This checks the scores carry information. It is not a prediction test and is not used to select anything.
+- Method: mean score per ticker and article date (no lag) versus that day's close-to-close change (pct_change_1d). Spearman correlation and mean return by score tercile.
+- Report whatever it shows.
+- V1 result (29 Oct): 16,026 ticker-days. Spearman 0.155 between mean score and same-day return. Mean same-day return by score tercile: -0.485% (lowest), +0.190% (middle), +0.517% (highest). Scores carry information about same-day moves. Association is not prediction, and some headlines describe the price move itself.
