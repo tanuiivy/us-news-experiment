@@ -47,3 +47,9 @@ In order, 29 Oct 2026:
 - Method: mean score per ticker and article date (no lag) versus that day's close-to-close change (pct_change_1d). Spearman correlation and mean return by score tercile.
 - Report whatever it shows.
 - V1 result (29 Oct): 16,026 ticker-days. Spearman 0.155 between mean score and same-day return. Mean same-day return by score tercile: -0.485% (lowest), +0.190% (middle), +0.517% (highest). Scores carry information about same-day moves. Association is not prediction, and some headlines describe the price move itself.
+
+## 29 Oct: social media (X) not tested, recorded as future work
+- X API: no free read access; historical archive only on the highest paid tiers; the default plan reaches back 7 days. Not feasible for the 2023 test period.
+- Public dataset checked: Kaggle stock tweets, 2021-09-30 to 2022-09-30, about 81,000 tweets, about 20% duplicate text, Tesla 46% and TSM 14% of rows. No overlap with the 2023 test period, so it could only support a separate pilot.
+- Licence, timestamp precision and ticker list were not verified.
+- Decision: not pursued in this project. Reported as a limitation and as future work.
