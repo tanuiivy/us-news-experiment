@@ -30,5 +30,15 @@
 | Wider band (+-1.5%) | Random Forest | AUC (macro) | 0.615 | 0.616 | +0.001 (-0.001, +0.003) |
 | Wider band (+-1.5%) | Random Forest | Balanced accuracy | 0.398 | 0.392 | -0.007 (-0.015, +0.002) |
 | Wider band (+-1.5%) | Random Forest | Accuracy | 0.492 | 0.483 | -0.009 (-0.015, -0.003) * |
+| Full-text sentiment (+-1.0%) | XGBoost | AUC (neutral vs moving) | 0.608 | 0.608 | -0.001 (-0.002, +0.000) |
+| Full-text sentiment (+-1.0%) | XGBoost | AUC (direction) | 0.466 | 0.464 | -0.002 (-0.009, +0.005) |
+| Full-text sentiment (+-1.0%) | XGBoost | AUC (macro) | 0.575 | 0.573 | -0.001 (-0.003, -0.000) * |
+| Full-text sentiment (+-1.0%) | XGBoost | Balanced accuracy | 0.387 | 0.386 | -0.001 (-0.008, +0.006) |
+| Full-text sentiment (+-1.0%) | XGBoost | Accuracy | 0.453 | 0.450 | -0.003 (-0.009, +0.003) |
+| Full-text sentiment (+-1.0%) | Random Forest | AUC (neutral vs moving) | 0.605 | 0.604 | -0.001 (-0.003, +0.002) |
+| Full-text sentiment (+-1.0%) | Random Forest | AUC (direction) | 0.468 | 0.464 | -0.003 (-0.010, +0.004) |
+| Full-text sentiment (+-1.0%) | Random Forest | AUC (macro) | 0.576 | 0.577 | +0.001 (-0.001, +0.003) |
+| Full-text sentiment (+-1.0%) | Random Forest | Balanced accuracy | 0.378 | 0.381 | +0.003 (-0.005, +0.012) |
+| Full-text sentiment (+-1.0%) | Random Forest | Accuracy | 0.432 | 0.433 | +0.001 (-0.008, +0.009) |
 
 * interval excludes zero. Always-neutral accuracy: 0.518 (+-1.0%), 0.677 (+-1.5%).

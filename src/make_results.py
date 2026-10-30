@@ -21,6 +21,7 @@ RUNS = [
     ("Primary (+-1.0% band)", "outputs/us_paired_B_minus_A.csv", 0.518),
     ("Late December removed (+-1.0%)", "outputs/us_paired_B_minus_A_until.csv", None),
     ("Wider band (+-1.5%)", "outputs/us_paired_B_minus_A_t15.csv", 0.677),
+    ("Full-text sentiment (+-1.0%)", "outputs/us_paired_B_minus_A_text.csv", 0.518),
 ]
 MODEL_NAME = {"xgboost": "XGBoost", "random_forest": "Random Forest"}
 MODEL_COLOR = {"xgboost": BLUE, "random_forest": ORANGE}
@@ -94,7 +95,7 @@ plt.close(fig)
 
 # ---------- Figure 2: paired differences ----------
 metrics = ["auc_neutral_vs_moving", "auc_direction"]
-fig, axes = plt.subplots(2, 3, figsize=(11, 5.2))
+fig, axes = plt.subplots(2, len(RUNS), figsize=(14, 5.2))
 for r, k in enumerate(metrics):
     sub = raw[raw["metric"] == k]
     lim = float(np.abs(sub[["ci_low", "ci_high"]].to_numpy()).max()) * 1.35
