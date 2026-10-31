@@ -1,0 +1,10 @@
+,downward,neutral,upward,overall,is_sentiment,rank
+day_range_pct,0.011501989,0.3622647,0.11751107,0.16375925,False,1
+close_to_ma,0.14611311,0.07266468,0.21355376,0.14411052,False,2
+pct_change_1d,0.10294609,0.09701186,0.08979489,0.09658428,False,3
+RSI_14,0.055100773,0.102038845,0.058623206,0.07192094,False,4
+rel_volume,0.091087945,0.05902001,0.0007570591,0.050288334,False,5
+macd_line_rel,0.04949666,0.040392622,0.04972846,0.046539247,False,6
+sentiment_score,0.0,0.0,0.0,0.0,True,7
+sentiment_article_count,0.0,0.0,0.0,0.0,True,8
+has_sentiment,0.0,0.0,0.0,0.0,True,9
